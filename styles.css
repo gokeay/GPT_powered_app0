@@ -1,0 +1,67 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Arka plan rengi */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#userInput {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#sendButton {
+    background-color: #2ecc71; /* Yeşil renk */
+    color: #fff; /* Beyaz metin rengi */
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#sendButton:hover {
+    background-color: #27ae60; /* Koyu yeşil renk */
+}
+
+.categories {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.category {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ecf0f1; /* Gri tonlu kenarlık rengi */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti */
+    background-color: #f8f8f8; /* Kutu arka plan rengi */
+}
+
+.category h3 {
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 150px;
+    height: 100px;
+    background-color: #92bcd8; /* Mavi renk */
+    color: #fff; /* Beyaz metin rengi */
+    border: 1px solid #2980b9; /* Mavi tonlu kenarlık rengi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti */
+    margin-top: 5px;
+    resize: none; /* Yeniden boyutlandırmayı devre dışı bırak */
+}
+
+/* Eğer turkuaz renk istiyorsanız, aşağıdaki kodu kullanabilirsiniz */
+/* textarea {
+    background-color: #1abc9c; 
+    border: 1px solid #16a085;
+} */
