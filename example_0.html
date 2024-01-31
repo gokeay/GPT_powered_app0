@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execute Python from JavaScript</title>
+    <script type="module">
+        importScripts('https://cdn.jsdelivr.net/pyodide/v0.18.0/full/pyodide.js');
+        
+        async function loadPyodide() {
+            self.pyodide = await loadPyodide({
+                indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.18.0/full/'
+            });
+            await pyodide.loadPackage(['example.py']);
+        }
+
+        async function executePythonFunction() {
+            const inputValue = document.getElementById('inputValue').value;
+            const result = pyodide.runPython(`square(${inputValue})`);
+            document.getElementById('output').innerText = `Square: ${result}`;
+        }
+
+        // Load Pyodide and Python script on page load
+        loadPyodide();
+    </script>
+</head>
+<body>
+    <input type="number" id="inputValue" placeholder="Enter a number">
+    <button onclick="executePythonFunction()">Execute Python Function</button>
+    <div id="output"></div>
+</body>
+</html>
